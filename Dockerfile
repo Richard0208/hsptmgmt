@@ -2,10 +2,10 @@ FROM python:3.8
 
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV MYSQL_DATABASE=greg
+ENV MYSQL_DATABASE=mydb
 ENV MYSQL_USER=root
 ENV MYSQL_PASSWORD=root
-ENV MYSQL_HOST=db
+ENV MYSQL_HOST=localhost
 
 RUN apt-get update && apt-get install -y \
     default-libmysqlclient-dev \

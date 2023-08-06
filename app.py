@@ -26,7 +26,7 @@ mail = Mail(app)
 
 @retry(stop=stop_after_delay(30), wait=wait_fixed(1))
 def get_db_connection():
-    host = os.environ.get('MYSQL_HOST', 'db')
+    host = os.environ.get('MYSQL_HOST', 'localhost')
     user = os.environ.get('MYSQL_USER', 'root')
     password = os.environ.get('MYSQL_PASSWORD', 'root')
     
@@ -36,10 +36,10 @@ def get_db_connection():
         password=password,
     )
     cursor = connection.cursor()
-    cursor.execute("CREATE DATABASE IF NOT EXISTS greg")
+    cursor.execute("CREATE DATABASE IF NOT EXISTS mydb")
     connection.commit()
 
-    connection.database = 'greg'
+    connection.database = 'mydb'
     
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS User (
