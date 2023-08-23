@@ -1,3 +1,3 @@
-# hsptlmgm
+# hsptmgmt
 # hsptmgmt
 # hsptmgmt
